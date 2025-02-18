@@ -2,6 +2,9 @@
 
 An interactive quiz platform that allows users to attempt quizzes, get instant feedback, track progress, and manage quiz attempts. The platform includes timer-based quizzes and stores user data using IndexedDB for history tracking.
 
+## 🚀 Live Demo  
+🔗 **Live:** [Quiz Platfrom](https://quizplatfrom.netlify.app/)  
+
 ## Features
 
 ### 1. **Quiz Creation & Management**
