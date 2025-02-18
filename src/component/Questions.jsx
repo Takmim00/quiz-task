@@ -1,5 +1,4 @@
-// IntegerTypeQuiz.jsx
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { QuizContext } from "./provider/QuizProvider";
 
@@ -28,7 +27,7 @@ const questions = [
   },
 ];
 
-const IntegerTypeQuiz = () => {
+const Questions = () => {
   const [userAnswers, setUserAnswers] = useState({});
   const [feedback, setFeedback] = useState({});
   const [timeLeft, setTimeLeft] = useState(30);
@@ -93,37 +92,44 @@ const IntegerTypeQuiz = () => {
   };
 
   return (
-    <div className="p-6 bg-base-200 min-h-screen">
-      <h1 className="text-3xl font-bold mb-6 text-primary">
-        Integer-Type Questions
-      </h1>
-      <div className="card w-full bg-neutral text-neutral-content mb-4 shadow-xl">
-        <div className="card-body">
-          <h2 className="card-title">{questions[currentQuestion].question}</h2>
+    <div className="p-8  flex items-center justify-center">
+      <div className="w-full sm:w-2/3 md:w-1/2 lg:w-1/3 bg-white rounded-xl shadow-xl p-6">
+        <h1 className="text-4xl font-bold text-center text-blue-600 mb-6">
+          Integer-Type Questions
+        </h1>
+        <div className="mb-6 text-center">
+          <div className="text-xl mb-4">
+            {questions[currentQuestion].question}
+          </div>
           <input
-            className="input text-black input-bordered w-full mt-2"
+            type="text"
+            className="input input-bordered text-black w-full mb-4 py-2 px-4 rounded-lg"
             onChange={(e) => handleChange(e, questions[currentQuestion].id)}
             disabled={timeLeft === 0}
+            value={userAnswers[questions[currentQuestion].id] || ""}
+            placeholder="Enter your answer"
           />
+          <p className="text-lg mb-4">
+            Time Left: <span className="font-bold">{timeLeft}</span> seconds
+          </p>
           {feedback[questions[currentQuestion].id] && (
-            <p className="mt-2 text-accent">
+            <p className="mt-4 text-lg text-green-500 font-semibold">
               {feedback[questions[currentQuestion].id]}
             </p>
           )}
         </div>
+        <button
+          className={`btn btn-accent w-full py-3 mt-4 text-lg ${
+            timeLeft === 0 ? "bg-gray-400" : "bg-blue-500"
+          }`}
+          onClick={handleNext}
+          disabled={timeLeft === 0}
+        >
+          Next
+        </button>
       </div>
-      <p className="text-lg mb-4">
-        Time Left: <span className="font-bold">{timeLeft}</span> seconds
-      </p>
-      <button
-        className="btn btn-accent"
-        onClick={handleNext}
-        disabled={timeLeft === 0}
-      >
-        Next
-      </button>
     </div>
   );
 };
 
-export default IntegerTypeQuiz;
+export default Questions;
