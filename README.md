@@ -1,7 +1,3 @@
-Here's a sample README.md file for your Interactive Quiz Platform project:
-
----
-
 # Interactive Quiz Platform
 
 An interactive quiz platform that allows users to attempt quizzes, get instant feedback, track progress, and manage quiz attempts. The platform includes timer-based quizzes and stores user data using IndexedDB for history tracking.
@@ -76,4 +72,4 @@ This will start the application on `http://localhost:3000`.
 
 ## GitHub Repository
 
-- [GitHub Repository Link](https://github.com/yourusername/interactive-quiz-platform)
+- [GitHub Repository Link](https://github.com/Takmim00/quiz-task)
