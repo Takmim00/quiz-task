@@ -25,11 +25,6 @@ An interactive quiz platform that allows users to attempt quizzes, get instant f
    - **Quiz History**: Save quiz history using IndexedDB for offline access.
    - **Timer**: Countdown timer for each question to add urgency.
 
-## Deployment
-
-The platform is deployed on **Vercel**. You can access the live application by following the link below:
-
-- [Live App on Vercel](https://your-deployment-link.vercel.app/)
 
 ## Installation Instructions
 
